@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Klokkeoppgave</title>
+    <style>body { background-color: lightblue; }</style>
+    <script>
+        // starter skript når nettside er åpen
+        // kall funksjonen 'oppdater' når siden er lastet
+        window.onload = oppdater;
+
+        /*
+        oppdater tidspunktet på nettsiden hvert sekund.
+        */
+        function pad(n) {
+            return n < 10 ? '0' + n : n;
+        }
+
+        function oppdater() {
+            var tid = new Date();
+            var hh = pad(tid.getHours());
+            var mm = pad(tid.getMinutes());
+            var ss = pad(tid.getSeconds());
+
+            document.getElementById("klokkeutskrift").innerHTML = hh + ":" + mm + ":" + ss;
+
+            setTimeout(oppdater, 1000);
+        }
+</script>
+</head>
+<body>
+    <div style="text-align: center;">
+    <h1>klokka er nå: <span id="klokkeutskrift">Kan ikkje vise tidspunkt</span></h1>
+    <h2>År</h2> <span id="år"></span>
+    <h2>Dato</h2> 
+    <h2>Time <span id="Time"</h2>
+    <h2>Sekund</h2>
+    <h2>Daryna</h2>
+    </div>
+</body>
+</html>
